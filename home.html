@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rania Abdelaal" />
+
+    <!-- title -->
+    <title> Home</title>
+    <link rel="icon" href="images/login.png" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/home.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-dark fixed-top p-5">
+      <div class="container-fluid ">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-end m-2" id="navbarSupportedContent">
+
+<div class="d-inline-block border border-1 border-light rounded-5">
+          <ul class="navbar-nav px-5">
+
+            <li class="nav-item">
+              <a class="nav-link  text-light fs-5 text-center" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-light fs-5 text-center " href="#">Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-light  fs-5 text-center" href="#">Setting</a>
+            </li>
+          </ul>
+          <div class="border-top border-1 border-white rounded-top rounded-5 d-inline-block mt-2 px-5 py-2 bg-dark bg-opacity-25 ">
+          <button id="logOut" class="bg-transparent border-0">
+            <a href="" id="toSignIn" class="text-light text-decoration-none fs-5 ">Log Out</a>
+          </button>
+</div>
+</div>
+
+        </div>
+      </div>
+    </nav>
+    <main class="p-5 vh-100">
+      
+<div class=" d-flex  flex-column justify-content-center h-100 ">
+
+<h1 class="display-1 text-center fw-lighter m-3"> WELCOME <span id="userName" class="fw-bolder px-2"></span> !</h1>
+<p class="text-center fs-5">Lorem ipsum dolor sit amet.</p>
+<div class=" text-center">  
+  <button class="btn shadow-lg bg-transparent border border-1 rounded-pill px-3 py-1 text-light fw-bolder">GET STARTED</button>
+</div>
+  </div> 
+
+ </main>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

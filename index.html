@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rania Abdelaal" />
+
+    <!-- title -->
+    <title>Login</title>
+    <link rel="icon" href="images/login.png" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main
+      class="min-vh-100 d-flex justify-content-center align-items-center p-5"
+    >
+      <div
+        class="position-relative change-face d-flex justify-content-center align-items-center vh-90"
+      >
+        <div
+          class="position-absolute start-50 top-0 translate-middle-x w-100 h-100 front row g-1 bg-dark bg-opacity-10 p-5 b-shadow custom-border"
+        >
+          <div class="form-floating col-12">
+            <input
+              type="email"
+              class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
+              id="inputEmail"
+              placeholder="Email address"
+            />
+            <label for="inputEmail">Email address</label>
+            <p
+              class="px-2 text-danger fs-7 fw-bold rounded-3 mt-1 bg-white bg-opacity-50 d-none"
+              id="emailNotExist"
+            >
+              Email address doesn't exist .
+            </p>
+          </div>
+          <div class="col-12">
+              <div class="form-floating position-relative">
+                <input
+                  type="password"
+                  class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
+                  id="inputPassword"
+                  placeholder="password"
+                />
+                <label for="inputPassword">Password</label>
+                <img
+                src="images/eye-slash-regular.svg"
+                class="position-absolute end-0 top-50"
+                alt=""
+                id="inputPasswordEye"
+              />
+            </div>
+            <p
+              class="px-2 text-danger fs-7 fw-bold rounded-3 mt-1 bg-white bg-opacity-50 d-none"
+              id="incorrectPassword"
+            >
+              Incorrect Password
+            </p>
+          </div>
+
+          <div class="py-3 col-12 text-center">
+            <button
+              class="mt-5 mb-2 btn px-4 py-2 b-shadow border-0 rounded-pill fw-bold bg-dark text-white bg-opacity-25"
+            >
+              <a class="text-decoration-none" id="signIn">Sign In</a>
+            </button>
+          </div>
+          <div class="col-12">
+            <p>
+              Don't have an acount?
+              <button
+                class="px-4 py-1 border-0 rounded-pill fw-bold bg-transparent text-decoration-underline"
+                id="toSignUp"
+              >
+                Sign Up
+              </button>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="back w-100 bg-dark bg-opacity-10 p-5 b-shadow h-100 row g-3 custom-border"
+        >
+          <div class="col-lg-6 form-floating">
+            <input
+              type="text"
+              class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
+              id="firstName"
+              placeholder=">First Name"
+            />
+            <label for="firstName">First Name</label>
+            <p
+              class="px-2 text-danger fs-7 fw-bold rounded-3 mt-1 bg-white bg-opacity-50 d-none"
+              id="firstNameError"
+            >
+              Please enter your first name .
+            </p>
+          </div>
+          <div class="col-lg-6 form-floating">
+            <input
+              type="text"
+              class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
+              id="lastName"
+              placeholder=">Last Name"
+            />
+            <label for="lastName">Last Name</label>
+            <p
+              class="px-2 text-danger fs-7 fw-bold rounded-3 mt-1 bg-white bg-opacity-50 d-none"
+              id="lastNameError"
+            >
+              Please enter your Last Name .
+            </p>
+          </div>
+
+          <div class="col-12 form-floating">
+            <input
+              type="email"
+              class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
+              id="emailAddress"
+              placeholder="Email address"
+            />
+            <label for="emailAddress">Email address</label>
+            <p
+              class="px-2 text-danger fs-7 fw-bold rounded-3 mt-1 bg-white bg-opacity-50 d-none"
+              id="emailAddressError"
+            >
+              Please enter a valid email address .
+            </p>
+            <p
+              class="px-2 text-danger fs-7 fw-bold rounded-3 mt-1 bg-white bg-opacity-50 d-none"
+              id="emailAddressInUse"
+            >
+              Email address already in use .
+            </p>
+          </div>
+
+          <div class="col-12 ">
+<div class="form-floating position-relative">
+
+            <input
+              type="password"
+              class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
+              id="password"
+              placeholder="Password"
+            />
+
+
+            <label for="password">Password</label>   
+                     <img
+              src="images/eye-slash-regular.svg"
+              class="position-absolute end-0 top-50"
+              alt=""
+              id="passwordEye"
+            />
+</div>
+
+
+            <p
+              class="px-2 text-danger fs-7 fw-bold rounded-3 mt-1 bg-white bg-opacity-50 d-none"
+              id="passwordError"
+            >
+              Your password must be at least 10 characters and include the
+              following :numbers , symbols , uppercase letters and lowercase
+              letters.
+            </p>
+          </div>
+          <div class="col-12">
+            <div class=" form-floating position-relative">
+
+
+ <input
+              type="password"
+              class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+            />
+ 
+            <label for="confirmPassword">Confirm Password</label>
+           <img
+              src="images/eye-slash-regular.svg"
+              class="position-absolute end-0 top-50"
+              alt=""
+              id="confirmPasswordEye"
+            />
+
+            </div>
+           
+            <p
+              class="px-2 text-danger fs-7 fw-bold rounded-3 mt-1 bg-white bg-opacity-50 d-none"
+              id="confirmPasswordError"
+            >
+              The passwords you entered didn't match – try again .
+            </p>
+          </div>
+
+          <div class="col-12 py-4 text-center">
+            <button
+              class="btn px-4 py-2 b-shadow border-0 rounded-pill fw-bold bg-dark text-white bg-opacity-25"
+              id="signUp"
+            >
+              Sign Up
+            </button>
+          </div>
+          <div class="col-12">
+            <p>
+              Already have an account?
+              <button
+                class="px-4 py-2 border-0 rounded-pill fw-bold bg-transparent text-decoration-underline"
+                id="toSignIn"
+              >
+                Sign In
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

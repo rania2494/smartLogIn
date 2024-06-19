@@ -1,0 +1,126 @@
+body{
+  font-family: "Ojuju", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+color: white;
+background-image: url('../images/main.svg');
+background-size: cover;
+background-attachment: fixed;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.vh-90{
+    min-height: 90vh;
+}
+
+
+
+
+.t-shadow {
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #2c5364 0px 0px 20px, #2c5364 0px 0px 30px, #2c5364 0px 0px 40px, #2c5364 0px 0px 50px, #2c5364 0px 0px 75px;
+}
+
+.b-shadow {
+    box-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #2c5364 0px 0px 20px, #2c5364 0px 0px 30px, #2c5364 0px 0px 40px, #2c5364 0px 0px 50px, #2c5364 0px 0px 75px;
+}
+
+button:hover ,a:hover, button:active ,a:active, button:focus  , a:focus {
+    transform: scale(1.1);
+    background-color: transparent !important;
+    color: white;
+}
+
+.custom-border{
+
+   border-radius: 97% 85% 74% 49% / 35% 32% 53% 43%  ;
+}
+
+ .btn:focus , a:focus{
+    box-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #2c5364 0px 0px 20px, #2c5364 0px 0px 30px, #2c5364 0px 0px 40px, #2c5364 0px 0px 50px, #2c5364 0px 0px 75px !important;
+}
+a {
+ color: white;
+
+}
+
+.fs-7{
+    font-size: 0.85rem;
+}
+
+
+.form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select {
+    height: calc(3rem + 2px);}
+
+.change-face{
+    transform-style: preserve-3d;
+    transition: transform ease 3s;
+    width: 50%;
+
+}
+.front{
+    backface-visibility: hidden;
+}
+.back{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.rotate180{
+    transform: rotateY(180deg);
+}
+
+
+label{
+    text-shadow: none;
+}
+.form-control {
+  border-bottom-width:1px ;
+  color: white;
+}  
+.form-control:focus {
+    box-shadow:none;
+  border-bottom-width:2px ;
+  border-bottom-color:white ;
+  color: white;
+}  
+
+@media only screen and (max-width:992px) {
+    .change-face{
+        width: 80%;
+    }
+    .form-control {
+        border-bottom-width:0.5px ;
+      }  
+      .form-control:focus {
+        border-bottom-width:0.5px ;
+      }  
+      .vh-90{
+        min-height: 50vh;
+    }
+
+
+}
+
+@media only screen and (max-width:576px) {
+
+    label{
+        font-size: 0.85rem;
+    }
+}
+
+#inputPasswordEye , #confirmPasswordEye , #passwordEye{
+    cursor: pointer;
+width: 20px;
+right: 5%;
+
+}
+
+.form-floating>.form-control:focus~label::after, .form-floating>.form-control:not(:placeholder-shown)~label::after{
+    background-color: transparent;
+}
+.form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label {
+    color: white;
+}
