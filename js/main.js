@@ -14,7 +14,6 @@ let lastName = document.querySelector('#lastName')
 let lastNameError = document.querySelector('#lastNameError')
 let emailAddress = document.querySelector('#emailAddress')
 let emailAddressError = document.querySelector('#emailAddressError')
-let emailAddressInUse = document.querySelector('#emailAddressInUse')
 let password = document.querySelector('#password')
 let passwordError = document.querySelector('#passwordError')
 let confirmPassword = document.querySelector('#confirmPassword')
@@ -81,10 +80,10 @@ changeFace.classList.remove('rotate180')
 function firstNameValidation(){
     let regex=/^[a-zA-Z]{2,8}$/gi;
     if(regex.test(firstName.value)){
-    firstNameError.classList.add('d-none')
+    firstNameError.classList.add('invisible')
     return true
     } else{ 
-        firstNameError.classList.remove('d-none')
+        firstNameError.classList.remove('invisible')
         return false
     }
 }
@@ -93,10 +92,10 @@ firstName.addEventListener('change',firstNameValidation)
 function lastNameValidation(){
     let regex=/^[a-zA-Z]{2,8}$/gi;
     if(regex.test(lastName.value)){
-    lastNameError.classList.add('d-none')
+    lastNameError.classList.add('invisible')
     return true
     } else{ 
-        lastNameError.classList.remove('d-none')
+        lastNameError.classList.remove('invisible')
         return false
     }
 }
@@ -106,11 +105,13 @@ lastName.addEventListener('change',lastNameValidation)
 function emailValidation(){
     let emailRegex=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if(emailRegex.test(emailAddress.value)){
-    emailAddressError.classList.add('d-none')
+    emailAddressError.classList.add('invisible')
     emailAlreadyInUse()
     return true
     } else{ 
-        emailAddressError.classList.remove('d-none')
+        emailAddressError.classList.remove('invisible')
+        emailAddressError.innerHTML='Please enter a valid email address .'
+
         return false
     }
 
@@ -119,12 +120,17 @@ function emailAlreadyInUse(){
 if(users.length!=0){
     for (let i = 0; i < users.length; i++) {
         if(emailAddress.value!=users[i].emailAddress){
-            emailAddressInUse.classList.add('d-none')
+
+            emailAddressError.classList.add('invisible')
+
+
             return true
             
 
         } else{
-            emailAddressInUse.classList.remove('d-none')
+            emailAddressError.classList.remove('invisible')
+            emailAddressError.innerHTML='Email address already in use .'
+
             return false
         }
     }} else {
@@ -137,14 +143,14 @@ emailAddress.addEventListener('change',emailValidation)
 function passwordValidation(){
     let passwordRegex=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W|.*_).{10,}$/g;
     if(passwordRegex.test(password.value)){
-        if(passwordError.classList.contains('d-none')){
+        if(passwordError.classList.contains('invisible')){
             return true
         } else{
-                passwordError.classList.add('d-none')
+                passwordError.classList.add('invisible')
                 return true
         }
     } else{ 
-        passwordError.classList.remove('d-none')
+        passwordError.classList.remove('invisible')
         return false
     }
 }
@@ -154,14 +160,14 @@ password.addEventListener('change',passwordValidation)
 
 function confirmPasswordValidation(){
     if(password.value===confirmPassword.value){
-        if(confirmPasswordError.classList.contains('d-none')){
+        if(confirmPasswordError.classList.contains('invisible')){
             return true
         } else{
-            confirmPasswordError.classList.add('d-none')
+            confirmPasswordError.classList.add('invisible')
                 return true
         }
     } else{ 
-        C=confirmPasswordError.classList.remove('d-none')
+        C=confirmPasswordError.classList.remove('invisible')
         return false
     }
 }
@@ -195,15 +201,15 @@ if(users.length!=0){
     for (let i = 0; i < users.length; i++) {
         if(users[i].emailAddress===inputEmail.value){
 index = i
-emailNotExist.classList.add('d-none')
+emailNotExist.classList.add('invisible')
 
         } else{
-emailNotExist.classList.remove('d-none')
+emailNotExist.classList.remove('invisible')
         }
         
     }
 } else {
-    emailNotExist.classList.remove('d-none')
+    emailNotExist.classList.remove('invisible')
 
 }
 
@@ -217,11 +223,11 @@ inputEmail.addEventListener('change',checkEmail)
 function checkPassword (i){
     if(users[i].password===inputPassword.value){
 signIn.setAttribute('href','home.html')
-   incorrectPassword.classList.add('d-none')
+   incorrectPassword.classList.add('invisible')
    sessionStorage.setItem("userName",users[i].firstName);
    clearData()
 } else{
-    incorrectPassword.classList.remove('d-none')
+    incorrectPassword.classList.remove('invisible')
 
     }
 }
