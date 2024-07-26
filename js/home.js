@@ -7,7 +7,7 @@ function preventAccess(){
     userName = sessionStorage.getItem('userName');
     document.getElementById("userName").innerHTML =userName.toLocaleUpperCase() ;
 } else{
-    window.open(`${window.location.href.replace('home.html','')}`,"_self");
+    window.open(`${window.location.href.replace('home.html','index.html')}`,"_self");
 }
 }
 

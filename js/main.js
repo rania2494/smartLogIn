@@ -107,7 +107,6 @@ function emailValidation(){
     if(emailRegex.test(emailAddress.value)){
     emailAddressError.classList.add('invisible')
     emailAlreadyInUse()
-    return true
     } else{ 
         emailAddressError.classList.remove('invisible')
         emailAddressError.innerHTML='Please enter a valid email address .'
@@ -120,13 +119,7 @@ function emailAlreadyInUse(){
 if(users.length!=0){
     for (let i = 0; i < users.length; i++) {
         if(emailAddress.value!=users[i].emailAddress){
-
             emailAddressError.classList.add('invisible')
-
-
-            return true
-            
-
         } else{
             emailAddressError.classList.remove('invisible')
             emailAddressError.innerHTML='Email address already in use .'
@@ -177,7 +170,8 @@ confirmPassword.addEventListener('change',confirmPasswordValidation);
 
 //sign up
 function  signUpValidation (){
-    if(firstNameValidation()===true&&lastNameValidation()===true&&emailValidation()===true&&emailAlreadyInUse()===true&&passwordValidation()===true&&confirmPasswordValidation()===true){
+    if(firstNameValidation()===true&&lastNameValidation()===true&&emailAddressError.classList.contains('invisible')
+        &&passwordValidation()===true&&confirmPasswordValidation()===true){
 let newUser={firstName:firstName.value,
     LastName:lastName.value,
     password:password.value,
@@ -196,20 +190,28 @@ signUp.addEventListener('click',signUpValidation)
 
 ///sign in
 function checkEmail(){
+    console.log('eee')
 
 if(users.length!=0){
+    console.log('ppp')
+
     for (let i = 0; i < users.length; i++) {
         if(users[i].emailAddress===inputEmail.value){
 index = i
 emailNotExist.classList.add('invisible')
-
+console.log(i)
+return true
         } else{
 emailNotExist.classList.remove('invisible')
+console.log(i,'kkk')
+
         }
         
     }
 } else {
     emailNotExist.classList.remove('invisible')
+    console.log('lll')
+
 
 }
 
@@ -221,6 +223,8 @@ inputEmail.addEventListener('change',checkEmail)
 
 
 function checkPassword (i){
+
+if(emailNotExist.classList.contains('invisible')){
     if(users[i].password===inputPassword.value){
 signIn.setAttribute('href','home.html')
    incorrectPassword.classList.add('invisible')
@@ -230,8 +234,18 @@ signIn.setAttribute('href','home.html')
     incorrectPassword.classList.remove('invisible')
 
     }
+
+    
 }
+
+
+}
+
+
 signIn.addEventListener('click',()=>{
     checkPassword(index)
 }
+
+
+
 )
